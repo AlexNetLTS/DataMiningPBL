@@ -1,0 +1,12 @@
+feature_names,importance
+relationship,0.35697428779873036
+education-num,0.2341873315836421
+capital-gain,0.22962948445138323
+capital-loss,0.07686204498009257
+age,0.06112477920547986
+hours-per-week,0.03548437829102739
+marital-status,0.0039691014170023945
+workclass,0.0017685922726421127
+occupation,0.0
+sex,0.0
+native-country,0.0
