@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 16, "titleFontSize": 18}, "title": {"font": "\u6977\u4f53", "fontSize": 22}}, "layer": [{"mark": {"type": "text", "baseline": "middle"}, "encoding": {"color": {"condition": {"value": "black", "test": "(datum.value >= 0)"}, "value": "white"}, "text": {"field": "value", "format": ".2f", "type": "quantitative"}, "tooltip": [{"field": "x", "type": "nominal"}, {"field": "y", "type": "nominal"}, {"field": "value", "format": ".2f", "type": "quantitative"}], "x": {"field": "x", "type": "ordinal"}, "y": {"field": "y", "type": "ordinal"}}}, {"mark": "rect", "encoding": {"color": {"field": "value", "legend": {"format": ".2f"}, "scale": {"scheme": "redyellowblue"}, "type": "quantitative"}, "tooltip": [{"field": "x", "type": "nominal"}, {"field": "y", "type": "nominal"}, {"field": "value", "format": ".2f", "type": "quantitative"}], "x": {"field": "x", "type": "ordinal"}, "y": {"field": "y", "type": "ordinal"}}}], "data": {"name": "data-138574f4c9cc05fbc620eb2d089afcbe"}, "height": 450, "title": "\u76f8\u5173\u7cfb\u6570\u77e9\u9635", "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-138574f4c9cc05fbc620eb2d089afcbe": [{"x": "age", "y": "age", "value": 1.0}, {"x": "fnlwgt", "y": "age", "value": -0.0792394610624219}, {"x": "education-num", "y": "age", "value": 0.01925572324308576}, {"x": "capital-gain", "y": "age", "value": 0.07874554970935979}, {"x": "capital-loss", "y": "age", "value": 0.0594847249342797}, {"x": "hours-per-week", "y": "age", "value": 0.07300845955862567}, {"x": "age", "y": "fnlwgt", "value": -0.0792394610624219}, {"x": "fnlwgt", "y": "fnlwgt", "value": 1.0}, {"x": "education-num", "y": "fnlwgt", "value": -0.047317416865730974}, {"x": "capital-gain", "y": "fnlwgt", "value": 0.0003068338753455398}, {"x": "capital-loss", "y": "fnlwgt", "value": -0.009626069002107274}, {"x": "hours-per-week", "y": "fnlwgt", "value": -0.025517857780934763}, {"x": "age", "y": "education-num", "value": 0.01925572324308576}, {"x": "fnlwgt", "y": "education-num", "value": -0.047317416865730974}, {"x": "education-num", "y": "education-num", "value": 1.0}, {"x": "capital-gain", "y": "education-num", "value": 0.12366872839868594}, {"x": "capital-loss", "y": "education-num", "value": 0.079363047748222}, {"x": "hours-per-week", "y": "education-num", "value": 0.13154402555635789}, {"x": "age", "y": "capital-gain", "value": 0.07874554970935979}, {"x": "fnlwgt", "y": "capital-gain", "value": 0.0003068338753455398}, {"x": "education-num", "y": "capital-gain", "value": 0.12366872839868594}, {"x": "capital-gain", "y": "capital-gain", "value": 1.0}, {"x": "capital-loss", "y": "capital-gain", "value": -0.03249237946880758}, {"x": "hours-per-week", "y": "capital-gain", "value": 0.07927117326274574}, {"x": "age", "y": "capital-loss", "value": 0.0594847249342797}, {"x": "fnlwgt", "y": "capital-loss", "value": -0.009626069002107274}, {"x": "education-num", "y": "capital-loss", "value": 0.079363047748222}, {"x": "capital-gain", "y": "capital-loss", "value": -0.03249237946880758}, {"x": "capital-loss", "y": "capital-loss", "value": 1.0}, {"x": "hours-per-week", "y": "capital-loss", "value": 0.05174717773444884}, {"x": "age", "y": "hours-per-week", "value": 0.07300845955862567}, {"x": "fnlwgt", "y": "hours-per-week", "value": -0.025517857780934763}, {"x": "education-num", "y": "hours-per-week", "value": 0.13154402555635789}, {"x": "capital-gain", "y": "hours-per-week", "value": 0.07927117326274574}, {"x": "capital-loss", "y": "hours-per-week", "value": 0.05174717773444884}, {"x": "hours-per-week", "y": "hours-per-week", "value": 1.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
