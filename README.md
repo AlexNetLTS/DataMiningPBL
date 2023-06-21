@@ -11,7 +11,7 @@
 
 对于机器学习建模的一般过程：
 
-<iframe src='./image/大纲.html' width='100%' height='260'></iframe>
+<iframe src='image/大纲.html' width='100%' height='260'></iframe>
 
 ---
 
